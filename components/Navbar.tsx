@@ -73,9 +73,12 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-            <div className="w-12 h-12 bg-[#1a3c5e] rounded-full flex items-center justify-center shadow">
-              <span className="text-white font-extrabold text-base">MP</span>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/mpc-logo.jpg"
+              alt="MP Cabins Logo"
+              className="h-14 w-auto object-contain"
+            />
             <div>
               <div className="text-[#1a3c5e] font-extrabold text-xl leading-tight tracking-tight">MP Cabins</div>
               <div className="text-gray-400 text-xs tracking-wide">Metal Portable Cabins</div>

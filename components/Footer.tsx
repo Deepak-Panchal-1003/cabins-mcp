@@ -10,9 +10,12 @@ export default function Footer() {
           {/* Left: Logo, Name, Social */}
           <div className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
-              <div className="w-14 h-14 bg-[#e8a020] rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-bold text-xl">MP</span>
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/mpc-logo.jpg"
+                alt="MP Cabins Logo"
+                className="h-16 w-auto object-contain rounded-xl"
+              />
               <div>
                 <div className="text-white font-bold text-xl leading-tight">MP Cabins</div>
                 <div className="text-gray-400 text-sm">Metal Portable Cabins</div>

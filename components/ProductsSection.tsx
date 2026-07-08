@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 
 const products = [
@@ -5,43 +6,49 @@ const products = [
     name: "Portable Cabins",
     slug: "portable-cabins",
     description:
-      "Portable cabins are small, self-contained structures that can be easily transported and installed in different locations. They are commonly used for temporary accommodation, offices, classrooms, and storage units.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=380&fit=crop",
+      "Portable cabins are small, self-contained structures that can be easily transported and installed in different locations. Commonly used for temporary accommodation, offices, classrooms, and storage units.",
+    image: "/Portable-Cabin1.jpg",
+    fallback: "/Group-42762.png",
   },
   {
     name: "Portable Office Cabins",
     slug: "portable-office-cabins",
     description:
       "Portable office cabins are specifically designed to provide functional and convenient office space in various locations. These cabins offer a flexible and efficient solution for businesses that require temporary or mobile workspaces.",
-    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&h=380&fit=crop",
+    image: "/Portable-Office-Cabin-1.png",
+    fallback: "/Prefab-Office-cabin-1.jpg",
   },
   {
     name: "Security Cabins",
     slug: "portable-security-cabins",
     description:
       "Security cabins, also known as guard cabins or guardhouses, are small structures designed to provide a secure and controlled space for security personnel at various locations. These cabins serve as a central monitoring point.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=380&fit=crop",
+    image: "/Group-42764.png",
+    fallback: "/Group-42762.png",
   },
   {
     name: "Portable Restaurants",
     slug: "portable-restaurant",
     description:
-      "Portable restaurants, also known as food trucks or mobile food units, are movable food establishments that offer a range of culinary options in different locations. These restaurants are typically housed in trucks or trailers.",
-    image: "https://images.unsplash.com/photo-1555992336-03a23c7b20ee?w=600&h=380&fit=crop",
+      "Portable restaurants, also known as food trucks or mobile food units, are movable food establishments that offer a range of culinary options in different locations. Typically housed in trucks, trailers, or specially fabricated structures.",
+    image: "/Group-42769.png",
+    fallback: "/Group-42771.png",
   },
   {
     name: "Cargo Containers",
     slug: "cargo-containers",
     description:
-      "Cargo containers, also known as shipping containers or freight containers, are large, standardized metal boxes used for transporting goods by sea, land, or rail. They play a crucial role in global trade and logistics.",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=380&fit=crop",
+      "Cargo containers are large, standardised metal boxes used for transporting goods by sea, land, or rail. They play a crucial role in global trade and logistics, and are increasingly repurposed for storage and accommodation.",
+    image: "/Group-42766.png",
+    fallback: "/Group-42762.png",
   },
   {
     name: "Bunk Houses",
     slug: "bunk-houses",
     description:
-      "We offer superior quality Bunk Houses that are designed by our professionals using high-grade basic materials to ensure their flawlessness at the user's end. All electrical wiring is concealed for safety and aesthetics.",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=380&fit=crop",
+      "We offer superior quality Bunk Houses designed by our professionals using high-grade materials to ensure flawlessness at the user's end. All electrical wiring is concealed for safety and neat appearance.",
+    image: "/portable-bunk-house-500x500-1.webp",
+    fallback: "/Group-42772.png",
   },
 ];
 
@@ -68,15 +75,20 @@ export default function ProductsSection() {
               className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow group"
             >
               {/* Product Image */}
-              <div className="overflow-hidden h-52">
+              <div className="overflow-hidden h-52 bg-gray-100">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={product.image}
                   alt={product.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    const t = e.currentTarget;
+                    if (t.src !== window.location.origin + product.fallback) {
+                      t.src = product.fallback;
+                    }
+                  }}
                 />
               </div>
-
               {/* Content */}
               <div className="p-6">
                 <h3 className="text-lg font-bold text-[#1a3c5e] mb-2 group-hover:text-[#e8a020] transition-colors">
