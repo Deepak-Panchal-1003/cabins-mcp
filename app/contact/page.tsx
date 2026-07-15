@@ -17,7 +17,7 @@ export default function ContactPage() {
             <span className="text-[#e8a020]">Contact Us</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold">Contact Us</h1>
-          <p className="text-gray-300 mt-3 text-lg">We'd love to hear from you. Send us your inquiry today.</p>
+          <p className="text-gray-300 mt-3 text-lg">We&apos;d love to hear from you. Send us your inquiry today.</p>
         </div>
       </section>
 

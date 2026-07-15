@@ -92,7 +92,7 @@ export default function Testimonials() {
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
 
-                <p className="text-white/90 leading-relaxed mb-5 text-sm">"{t.text}"</p>
+                <p className="text-white/90 leading-relaxed mb-5 text-sm">&ldquo;{t.text}&rdquo;</p>
 
                 <div className="flex items-center gap-3">
                   <div className={`w-10 h-10 ${t.color} rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
@@ -139,7 +139,7 @@ export default function Testimonials() {
               Get in Touch
             </h2>
             <p className="text-gray-500 text-lg mb-8 leading-relaxed">
-              Let's talk about your project!
+              Let&apos;s talk about your project!
             </p>
 
             <div className="flex flex-col gap-5 mb-8">
